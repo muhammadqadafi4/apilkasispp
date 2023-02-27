@@ -1,0 +1,53 @@
+/**
+ *  TODO:
+ *  Buatlah variable year, daycount dengan ketentuan:
+ *  - year : bertipe data number, dengan nilai tahun saat ini.
+ *  - month : bertipe data number, dengan nilai bulan saat ini.
+ * 
+ * Buatlah logika switch case untuk dengan ketentuan:
+ *  1. Jika month bernilai 1, 3, 5, 7, 8, 10, atau 12, Jumlah hari dalam 1 bulan adalah 31.
+ *  2. Jika month bernilai 4, 6, 9, or 11,  Jumlah hari dalam 1 bulan adalah 30.
+ *  3. Jika month bernilai 2, dan year bukan tahun kabisat, Jumlah hari dalam 1 bulan adalah 28.
+ *     Jika year  tahun kabisat, Jumlah hari dalam 1 bulan adalah 29.
+ *  4. Jika month tidak berada didalam jangkauan (1 - 12), default dari percabangan akan dieksekusi
+ dan nilai dari day count adalah -1, yang berarti format bulan tidak valid.
+ */
+
+ //TODO
+
+let tahun = 400;
+ let Bulan = 2;
+ let daycount = 1;
+
+ switch (Bulan) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+        daycount = 31
+        break;
+
+        case 2:
+        if ((0 == tahun % 4) && (0 != tahun % 100) || (0 == tahun % 400)){
+            daycount = 29
+        } else {
+            daycount = 28
+        }
+
+        
+        break;
+
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+        daycount = 30
+        break;
+
+    default:
+        daycount = -1;
+}
+console.log(daycount);
